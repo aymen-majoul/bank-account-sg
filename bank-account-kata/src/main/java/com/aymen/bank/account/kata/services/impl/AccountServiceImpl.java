@@ -19,7 +19,10 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public void deposit(Account account, BigInteger amount) throws WrongAmountException {
-		if (amount == null || amount.signum() < 0) {
+		if (amount == null) {
+			throw new IllegalArgumentException("Amount can't be null");
+		}
+		if (amount.signum() < 0) {
 			throw new WrongAmountException("Please enter a positive amount");
 		}
 
@@ -28,7 +31,10 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public void withdraw(Account account, BigInteger amount) throws WrongAmountException, UnsufficientFundsException {
-		if (amount == null || amount.signum() < 0) {
+		if (amount == null) {
+			throw new IllegalArgumentException("Amount can't be null");
+		}
+		if (amount.signum() < 0) {
 			throw new WrongAmountException("Please enter a positive amount");
 		}
 		if (amount.compareTo(account.getBalance()) > 0) {
