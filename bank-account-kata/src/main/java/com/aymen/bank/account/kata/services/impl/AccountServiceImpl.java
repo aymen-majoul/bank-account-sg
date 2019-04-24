@@ -18,7 +18,7 @@ public class AccountServiceImpl implements AccountService {
 	StatementHistoryService statementHistoryService = new StatementHistoryServiceImpl();
 
 	@Override
-	public void deposit(Account account, BigInteger amount) throws WrongAmountException {
+	public void deposit(Account account, BigInteger amount) {
 		if (amount == null) {
 			throw new IllegalArgumentException("Amount can't be null");
 		}
@@ -30,7 +30,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void withdraw(Account account, BigInteger amount) throws WrongAmountException, UnsufficientFundsException {
+	public void withdraw(Account account, BigInteger amount) {
 		if (amount == null) {
 			throw new IllegalArgumentException("Amount can't be null");
 		}
