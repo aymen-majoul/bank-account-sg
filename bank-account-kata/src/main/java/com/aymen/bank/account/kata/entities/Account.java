@@ -25,6 +25,14 @@ public class Account {
 		return balance;
 	}
 
+	public void setBalance(BigInteger balance) {
+		this.balance = balance;
+	}
+
+	public void setHistory(StatementHistory history) {
+		this.history = history;
+	}
+
 	public StatementHistory getStatementHistory() {
 		return history;
 	}

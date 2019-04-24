@@ -20,6 +20,14 @@ public class Statement {
 		this.currentBalance = currentBalance;
 	}
 
+	public Operation getOperation() {
+		return operation;
+	}
+
+	public BigInteger getCurrentBalance() {
+		return currentBalance;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(operation, currentBalance);
